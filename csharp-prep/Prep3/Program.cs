@@ -9,7 +9,7 @@ class Program
         int magic0 = int.Parse(magic);*/
 
         Random randomGenerator = new Random();
-        int magic0 = randomGenerator.Next(1, 11);
+        int magic0 = randomGenerator.Next(1, 101);
 
 
         Console.Write("What is your guess? ");
