@@ -35,6 +35,9 @@ class Program
                 case "5":
                     isRunning = false;
                     break;
+                default:
+                    Console.WriteLine("Invalid option. Please try again.");
+                    break;
             }
 
             Console.WriteLine();

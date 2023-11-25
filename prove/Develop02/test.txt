@@ -1,0 +1,20 @@
+Date: 25/11/2023 23:37:50
+Prompt: Describe something interesting you learned today.
+Response: 1
+
+Date: 25/11/2023 23:37:52
+Prompt: Write about a goal you're currently working towards.
+Response: 2
+
+Date: 25/11/2023 23:37:54
+Prompt: Write about a goal you're currently working towards.
+Response: 3
+
+Date: 25/11/2023 23:37:56
+Prompt: If I had one thing I could do over today, what would it be?
+Response: 4
+
+Date: 25/11/2023 23:40:00
+Prompt: Describe something interesting you learned today.
+Response: 5
+
