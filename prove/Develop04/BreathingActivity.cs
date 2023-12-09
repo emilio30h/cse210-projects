@@ -5,21 +5,27 @@ class BreathingActivity : Activity
 {
     protected override void ExecuteActivity()
     {
-        int breathInDuration = duration / 2;
-        int breathOutDuration = duration / 2;
+        Console.WriteLine("Start breathing activity:");
 
-        for (int i = 0; i < duration; i++)
+        Console.WriteLine("Breathe in...");
+        Thread.Sleep(3000); // Pause for 3 seconds
+        Console.WriteLine("Breathe out...");
+        Thread.Sleep(3000); // Pause for 3 seconds
+
+        while (duration > 6)
         {
-            if (i % 2 == 0)
-            {
-                Console.WriteLine("Breathe in...");
-                PauseWithSpinner(breathInDuration);
-            }
-            else
-            {
-                Console.WriteLine("Breathe out...");
-                PauseWithSpinner(breathOutDuration);
-            }
+            Console.WriteLine("Breathe in...");
+            Thread.Sleep(3000); // Pause for 3 seconds
+            Console.WriteLine("Breathe out...");
+            Thread.Sleep(3000); // Pause for 3 seconds
+
+            duration -= 6;
+        }
+
+        if (duration > 0)
+        {
+            Console.WriteLine("Breathe in...");
+            Thread.Sleep(duration * 1000); // Pause for remaining duration
         }
     }
 

@@ -2,13 +2,28 @@ using System;
 
 class ListingActivity : Activity
 {
+    private string[] prompts = {
+        "Who are people that you appreciate?",
+        "What are personal strengths of yours?",
+        "Who are people that you have helped this week?",
+        "When have you felt the Holy Ghost this month?",
+        "Who are some of your personal heroes?"
+    };
+
     protected override void ExecuteActivity()
     {
         Console.WriteLine("Start listing items:");
 
         int itemCount = 0;
+        Random random = new Random();
+        string prompt = prompts[random.Next(prompts.Length)];
+
+        Console.WriteLine(prompt);
+        Thread.Sleep(5000); // Pause for 5 seconds
+
         while (duration > 0)
         {
+            Console.WriteLine("Enter an item:");
             string item = Console.ReadLine();
             if (string.IsNullOrEmpty(item))
                 break;
