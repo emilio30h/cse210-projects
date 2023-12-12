@@ -2,11 +2,22 @@ using System;
 
 public class Customer
 {
-    public string Name { get; set; }
-    public Address Address { get; set; }
+    private string name;
+    private Address address;
 
-    public bool IsInUSA()
+    public Customer(string name, Address address)
     {
-        return Address.IsInUSA();
+        this.name = name;
+        this.address = address;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public Address GetAddress()
+    {
+        return address;
     }
 }

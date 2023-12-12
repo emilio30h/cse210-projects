@@ -2,18 +2,26 @@ using System;
 
 public class Address
 {
-    public string Street { get; set; }
-    public string City { get; set; }
-    public string StateProvince { get; set; }
-    public string Country { get; set; }
+    private string street;
+    private string city;
+    private string stateProvince;
+    private string country;
+
+    public Address(string street, string city, string stateProvince, string country)
+    {
+        this.street = street;
+        this.city = city;
+        this.stateProvince = stateProvince;
+        this.country = country;
+    }
 
     public bool IsInUSA()
     {
-        return Country == "USA";
+        return country == "USA";
     }
 
     public string GetAddressString()
     {
-        return $"{Street}, {City}, {StateProvince}, {Country}";
+        return $"{street}, {city}, {stateProvince}, {country}";
     }
 }

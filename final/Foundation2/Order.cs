@@ -3,39 +3,49 @@ using System.Collections.Generic;
 
 public class Order
 {
-    public List<Product> Products { get; set; }
-    public Customer Customer { get; set; }
+    private List<Product> products;
+    private Customer customer;
 
     public Order()
     {
-        Products = new List<Product>();
-        Customer = new Customer();
+        products = new List<Product>();
+        customer = new Customer();
+    }
+
+    public void AddProduct(Product product)
+    {
+        products.Add(product);
     }
 
     public decimal CalculateTotalCost()
     {
         decimal totalCost = 0;
-        foreach (Product product in Products)
+        foreach (Product product in products)
         {
-            totalCost += (decimal)product.Price * product.Quantity;
+            totalCost += product.Price * product.Quantity;
         }
         return totalCost;
     }
 
     public string GetPackingLabel()
     {
-        return $"Order: {Customer.Name}\nAddress: {Customer.Address.GetAddressString()}";
+        return $"Order: {customer.GetName()}\nAddress: {customer.GetAddress().GetAddressString()}";
     }
 
     public string GetShippingLabel()
     {
-        if (Customer.Address.IsInUSA())
+        if (customer.GetAddress().IsInUSA())
         {
-            return $"Shipping to:\n{Customer.Name}\n{Customer.Address.GetAddressString()}";
+            return $"Shipping to:\n{customer.GetName()}\n{customer.GetAddress().GetAddressString()}";
         }
         else
         {
-            return $"International shipping to:\n{Customer.Name}\n{Customer.Address.GetAddressString()}";
+            return $"International shipping to:\n{customer.GetName()}\n{customer.GetAddress().GetAddressString()}";
         }
+    }
+
+    public void SetCustomer(Customer customer)
+    {
+        this.customer = customer;
     }
 }

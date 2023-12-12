@@ -2,8 +2,31 @@ using System;
 
 public class Product
 {
-    public string Name { get; set; }
-    public string ProductId { get; set; }
-    public float Price { get; set; }
-    public int Quantity { get; set; }
+    private string name;
+    private string productId;
+    private float price;
+    private int quantity;
+
+    public Product(string name, string productId, float price, int quantity)
+    {
+        this.name = name;
+        this.productId = productId;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public float GetPrice()
+    {
+        return price;
+    }
+
+    public int GetQuantity()
+    {
+        return quantity;
+    }
 }

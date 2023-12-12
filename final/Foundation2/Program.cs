@@ -8,35 +8,17 @@ class Program
         Order order = new Order();
 
         // Create products
-        Product product1 = new Product
-        {
-            Name = "Product 1",
-            ProductId = "P1",
-            Price = 10.5f,
-            Quantity = 2
-        };
-
-        Product product2 = new Product
-        {
-            Name = "Product 2",
-            ProductId = "P2",
-            Price = 15.25f,
-            Quantity = 1
-        };
+        Product product1 = new Product("Product 1", "P1", 10.5f, 2);
+        Product product2 = new Product("Product 2", "P2", 15.25f, 1);
 
         // Add products to the order
-        order.Products.Add(product1);
-        order.Products.Add(product2);
+        order.AddProduct(product1);
+        order.AddProduct(product2);
 
         // Set customer details
-        order.Customer.Name = "John Doe";
-        order.Customer.Address = new Address
-        {
-            Street = "123 Main St",
-            City = "Anytown",
-            StateProvince = "CA",
-            Country = "USA"
-        };
+        Address address = new Address("123 Main St", "Anytown", "CA", "USA");
+        Customer customer = new Customer("John Doe", address);
+        order.SetCustomer(customer);
 
         // Calculate total cost
         decimal totalCost = order.CalculateTotalCost();
