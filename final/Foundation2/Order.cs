@@ -9,7 +9,7 @@ public class Order
     public Order()
     {
         products = new List<Product>();
-        customer = new Customer();
+        customer = new Customer("", new Address("", "", "", ""));
     }
 
     public void AddProduct(Product product)
@@ -22,7 +22,9 @@ public class Order
         decimal totalCost = 0;
         foreach (Product product in products)
         {
-            totalCost += product.Price * product.Quantity;
+            decimal price = Convert.ToDecimal(product.GetPrice());
+            totalCost += price * product.GetQuantity();
+
         }
         return totalCost;
     }
